@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pl.app.collectorsappbackend.model.entity.dto.Card;
+import pl.app.collectorsappbackend.model.dto.Card;
 import pl.app.collectorsappbackend.service.CardService;
 
 import java.util.List;

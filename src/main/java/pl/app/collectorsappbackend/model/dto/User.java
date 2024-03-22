@@ -1,4 +1,4 @@
-package pl.app.collectorsappbackend.model.entity.dto;
+package pl.app.collectorsappbackend.model.dto;
 
 import jakarta.validation.constraints.NotBlank;
 

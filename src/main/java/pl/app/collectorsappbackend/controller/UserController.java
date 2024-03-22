@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pl.app.collectorsappbackend.model.entity.dto.User;
+import pl.app.collectorsappbackend.model.dto.User;
 import pl.app.collectorsappbackend.service.UserService;
 
 @RestController

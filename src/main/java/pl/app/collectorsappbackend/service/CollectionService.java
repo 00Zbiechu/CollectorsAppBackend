@@ -1,10 +1,13 @@
 package pl.app.collectorsappbackend.service;
 
-import pl.app.collectorsappbackend.model.entity.dto.CardCollection;
+import pl.app.collectorsappbackend.model.dto.AddCardsToCollection;
+import pl.app.collectorsappbackend.model.dto.CardsCollection;
 
 public interface CollectionService {
 
-    CardCollection getUserCollection(Long userId);
+    CardsCollection getUserCollection(Long userId);
 
-    CardCollection saveInCollection(CardCollection cardCollection);
+    CardsCollection saveInCollection(AddCardsToCollection addCardsToCollection);
+
+    CardsCollection trade(Long userId, Long oldCardId, Long newCardId);
 }

@@ -1,6 +1,6 @@
 package pl.app.collectorsappbackend.service;
 
-import pl.app.collectorsappbackend.model.entity.dto.User;
+import pl.app.collectorsappbackend.model.dto.User;
 
 public interface UserService {
 

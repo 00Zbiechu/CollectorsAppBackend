@@ -1,6 +1,6 @@
 package pl.app.collectorsappbackend.service;
 
-import pl.app.collectorsappbackend.model.entity.dto.Card;
+import pl.app.collectorsappbackend.model.dto.Card;
 
 import java.util.List;
 

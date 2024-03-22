@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import pl.app.collectorsappbackend.model.entity.dto.CardCollection;
+import pl.app.collectorsappbackend.model.dto.AddCardsToCollection;
+import pl.app.collectorsappbackend.model.dto.CardsCollection;
 import pl.app.collectorsappbackend.service.CollectionService;
 
 @RestController
@@ -22,12 +23,17 @@ public class CollectionController {
     private final CollectionService collectionService;
 
     @GetMapping
-    public ResponseEntity<CardCollection> getCollection(@RequestParam Long userId) {
+    public ResponseEntity<CardsCollection> getCollection(@RequestParam Long userId) {
         return new ResponseEntity<>(collectionService.getUserCollection(userId), HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<CardCollection> saveInCollection(@RequestBody CardCollection cardCollection) {
-        return new ResponseEntity<>(collectionService.saveInCollection(cardCollection), HttpStatus.CREATED);
+    public ResponseEntity<CardsCollection> saveInCollection(@RequestBody AddCardsToCollection addCardsToCollection) {
+        return new ResponseEntity<>(collectionService.saveInCollection(addCardsToCollection), HttpStatus.CREATED);
+    }
+
+    @PostMapping("/trade")
+    public ResponseEntity<CardsCollection> trade(@RequestParam Long userId, @RequestParam Long oldCardId, @RequestParam Long newCardId) {
+        return new ResponseEntity<>(collectionService.trade(userId, oldCardId, newCardId), HttpStatus.OK);
     }
 }
