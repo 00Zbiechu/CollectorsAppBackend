@@ -27,6 +27,6 @@ public class CardEntity extends BaseEntity {
     @Lob
     private byte[] image;
 
-    @OneToMany(mappedBy = "collectionKey.cardId", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "collectionKey.card", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<CollectionEntity> collectionEntities;
 }

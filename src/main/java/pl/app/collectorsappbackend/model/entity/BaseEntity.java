@@ -8,9 +8,9 @@ import lombok.Data;
 
 @Data
 @MappedSuperclass
-class BaseEntity {
+public class BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    protected Long id;
 }

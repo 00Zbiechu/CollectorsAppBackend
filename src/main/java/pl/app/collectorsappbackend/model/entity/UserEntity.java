@@ -19,6 +19,6 @@ public class UserEntity extends BaseEntity {
     @Column(nullable = false)
     private String username;
 
-    @OneToMany(mappedBy = "collectionKey.userId", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "collectionKey.user", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<CollectionEntity> collectionEntities;
 }
