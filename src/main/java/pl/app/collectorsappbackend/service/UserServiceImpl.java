@@ -27,11 +27,10 @@ public class UserServiceImpl extends BaseService<UserEntity, User> implements Us
         return userMapper;
     }
 
-    public User login(User dto) {
-        var user = userRepository.findByUsername(dto.username());
-        if (user.isEmpty()) {
-            return userMapper.toDTO(userRepository.save(userMapper.toEntity(dto)));
-        }
-        return userMapper.toDTO(user.get());
+    @Override
+    public User save(User dto) {
+        return userRepository.findByUsername(dto.username())
+                .map(userMapper::toDTO)
+                .orElseGet(() -> userMapper.toDTO(userRepository.save(userMapper.toEntity(dto))));
     }
 }

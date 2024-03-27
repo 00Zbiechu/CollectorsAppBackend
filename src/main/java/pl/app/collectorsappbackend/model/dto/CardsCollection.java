@@ -5,5 +5,5 @@ import lombok.Builder;
 import java.util.List;
 
 @Builder
-public record CardsCollection(Long userId, List<CardAmount> cardAmountList) {
+public record CardsCollection(List<CardAmount> cardAmountList) {
 }

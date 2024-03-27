@@ -5,9 +5,9 @@ import pl.app.collectorsappbackend.model.dto.CardsCollection;
 
 public interface CollectionService {
 
-    CardsCollection getUserCollection(Long userId);
+    CardsCollection getUserCollection();
 
     CardsCollection saveInCollection(AddCardsToCollection addCardsToCollection);
 
-    CardsCollection trade(Long userId, Long oldCardId, Long newCardId);
+    CardsCollection trade(Long oldCardId, Long newCardId);
 }

@@ -7,6 +7,4 @@ import java.util.List;
 public interface CardService {
 
     List<Card> getAll();
-
-    Card save(Card card);
 }

@@ -21,6 +21,6 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<User> login(@RequestBody User user) {
-        return new ResponseEntity<>(userService.login(user), HttpStatus.CREATED);
+        return new ResponseEntity<>(userService.save(user), HttpStatus.CREATED);
     }
 }

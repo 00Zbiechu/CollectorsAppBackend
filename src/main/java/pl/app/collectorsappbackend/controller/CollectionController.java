@@ -23,8 +23,8 @@ public class CollectionController {
     private final CollectionService collectionService;
 
     @GetMapping
-    public ResponseEntity<CardsCollection> getCollection(@RequestParam Long userId) {
-        return new ResponseEntity<>(collectionService.getUserCollection(userId), HttpStatus.OK);
+    public ResponseEntity<CardsCollection> getCollection() {
+        return new ResponseEntity<>(collectionService.getUserCollection(), HttpStatus.OK);
     }
 
     @PostMapping
@@ -33,7 +33,7 @@ public class CollectionController {
     }
 
     @PostMapping("/trade")
-    public ResponseEntity<CardsCollection> trade(@RequestParam Long userId, @RequestParam Long oldCardId, @RequestParam Long newCardId) {
-        return new ResponseEntity<>(collectionService.trade(userId, oldCardId, newCardId), HttpStatus.OK);
+    public ResponseEntity<CardsCollection> trade(@RequestParam Long oldCardId, @RequestParam Long newCardId) {
+        return new ResponseEntity<>(collectionService.trade(oldCardId, newCardId), HttpStatus.OK);
     }
 }
